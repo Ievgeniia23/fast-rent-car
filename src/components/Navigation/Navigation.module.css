@@ -1,0 +1,19 @@
+.nav {
+
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 125%;
+text-align: center;
+ display: flex;
+justify-content: space-between; 
+width: 90%;
+align-items: center;
+ margin: 0;
+width: 136px;
+
+}
+
+.active {
+  color: rgb(129, 97, 235); 
+}
