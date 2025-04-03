@@ -9,7 +9,7 @@ const Layout = ({children}) => {
   return (
     <div className={css.layout}>
       <AppBar />
-      <main>{children}</main>
+      <main className={css.content}>{children}</main>
       <Toaster position="top-center" reverseOrder={false} />
     </div>
   );

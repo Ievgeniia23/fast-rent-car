@@ -5,15 +5,13 @@ import css from "./AppBar.module.css"
 
 const AppBar = () => {
   return (
-      <div>
-          <header>
-              <Logo />
-              <Navigation />
-                
-          </header> 
-        
-      </div>
-  )
+    <div className={css.AppBarWrapper}>
+      <header className={css.headerWrapper}>
+        <Logo />
+        <Navigation />
+      </header>
+    </div>
+  );
 }
 
 export default AppBar;

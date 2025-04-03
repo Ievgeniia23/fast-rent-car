@@ -1,0 +1,13 @@
+.AppBarWrapper {
+    height: 68px;
+    background-color:#f2f4f7 ;
+   
+}
+
+.headerWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 26px 120px;
+
+}
