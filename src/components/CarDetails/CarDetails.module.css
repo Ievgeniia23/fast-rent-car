@@ -1,0 +1,57 @@
+.infoBox {
+  padding: 20px;
+}
+
+.headTitle {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.addressMileBox {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.icon {
+  fill: #3470ff;
+  margin-right: 8px;
+}
+
+.address,
+.text {
+  font-size: 14px;
+}
+
+.price {
+  font-size: 20px;
+  color: #3470ff;
+  margin: 10px 0;
+}
+
+.container1,
+.container2,
+.container3 {
+  margin-top: 24px;
+}
+
+.title,
+.title2 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.conditionList,
+.condition {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.specBox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const BookForm = ({ carId }) => {
   const [name, setName] = useState('');
@@ -8,7 +9,15 @@ const BookForm = ({ carId }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // Виклик функції для відправки форми (можливо, за допомогою axios або redux)
+
+    
+    toast.success('Booking request has been successfully sent!');
+
+    
+    setName('');
+    setEmail('');
+    setBookingDate('');
+    setComment('');
   };
 
   return (
@@ -19,6 +28,7 @@ const BookForm = ({ carId }) => {
           type="text"
           value={name}
           onChange={e => setName(e.target.value)}
+          required
         />
       </div>
       <div>
@@ -27,6 +37,7 @@ const BookForm = ({ carId }) => {
           type="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
+          required
         />
       </div>
       <div>
@@ -35,6 +46,7 @@ const BookForm = ({ carId }) => {
           type="date"
           value={bookingDate}
           onChange={e => setBookingDate(e.target.value)}
+          required
         />
       </div>
       <div>

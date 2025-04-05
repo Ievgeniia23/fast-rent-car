@@ -30,20 +30,23 @@ const carsSlice = createSlice({
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.cars = action.payload.cars || action.payload; // Учитываем возможную разницу API
+        state.cars = action.payload.cars || action.payload; 
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload || 'Ошибка загрузки машин';
       })
       .addCase(fetchCarDetails.pending, state => {
+        state.isLoading = true; 
         state.selectedCar = null;
         state.error = null;
       })
       .addCase(fetchCarDetails.fulfilled, (state, action) => {
+        state.isLoading = false; 
         state.selectedCar = action.payload;
       })
       .addCase(fetchCarDetails.rejected, (state, action) => {
+        state.isLoading = false;
         state.error = action.payload || 'Ошибка загрузки деталей машины';
       });
   },

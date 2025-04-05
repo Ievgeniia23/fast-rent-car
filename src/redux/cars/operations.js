@@ -3,7 +3,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://car-rental-api.goit.global/';
 
-// Получение списка машин
+
 export const fetchCars = createAsyncThunk(
   'cars/fetchCars',
   async ({ page = 1, filters = {} }, thunkAPI) => {
@@ -12,7 +12,7 @@ export const fetchCars = createAsyncThunk(
         params: { page, ...filters },
       });
 
-      // Убедимся, что данные приходят в правильном формате
+      
       return {
         cars: Array.isArray(response.data)
           ? response.data
@@ -25,7 +25,7 @@ export const fetchCars = createAsyncThunk(
   }
 );
 
-// Получение деталей автомобиля
+
 export const fetchCarDetails = createAsyncThunk(
   'cars/fetchCarDetails',
   async (id, thunkAPI) => {

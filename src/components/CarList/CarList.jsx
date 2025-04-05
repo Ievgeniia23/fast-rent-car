@@ -12,7 +12,7 @@ import Loader from '../../components/Loader/Loader';
 
 const CarList = ({ filters, page, setTotalPages }) => {
   const dispatch = useDispatch();
-  const cars = useSelector(selectCars); // Получаем список машин из Redux
+  const cars = useSelector(selectCars); 
   const favorites = useSelector(selectFavorites);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -26,8 +26,8 @@ const CarList = ({ filters, page, setTotalPages }) => {
   }, [dispatch, page, filters, setTotalPages]);
 
   if (isLoading) return <Loader />;
-  if (error) return <p>Ошибка: {error}</p>;
-  if (!cars || cars.length === 0) return <p>Нет доступных автомобилей</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!cars || cars.length === 0) return <p>There are no cars available</p>;
 
   return (
     <div>
@@ -37,8 +37,8 @@ const CarList = ({ filters, page, setTotalPages }) => {
             <h2>{car.name}</h2>
             <button onClick={() => dispatch(toggleFavorite(car.id))}>
               {favorites.includes(car.id)
-                ? 'Удалить из избранного'
-                : 'Добавить в избранное'}
+                ? 'Remove from favourites'
+                : 'Add to favourites'}
             </button>
           </li>
         ))}
