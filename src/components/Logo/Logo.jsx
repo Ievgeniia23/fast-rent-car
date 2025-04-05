@@ -2,9 +2,8 @@ import css from "./Logo.module.css"
 
 const Logo = () => {
     return (
-        <p className={css.logoStyle}>
-            Rental<span className={css.logoBlue}>Car</span>
-        </p>
+<img src="/src/assets/RentalCar.svg" alt="Logo" />
+     
     );
 };
 

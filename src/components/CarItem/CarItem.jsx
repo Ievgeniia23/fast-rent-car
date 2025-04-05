@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import FavoriteButton from '../FavoriteButton/FavoriteButton';
 import css from './CarItem.module.css';
 
 
@@ -21,13 +20,11 @@ const CarItem = ({ onFavoriteToggle, isFavorite, car }) => {
   return (
     <div className={css.card}>
       <div className={css.imageWrapper}>
-        {/* <FavoriteButton
-          carId={car.id}
-          isFavorite={isFavorite}
-          onFavoriteToggle={onFavoriteToggle}
-        /> */}
+        <img className={css.picture} src={car.img} alt={car.brand} />
+
+       
       </div>
-      <img className={css.picture} src={car.img} alt={car.brand} />
+
       <div className={css.boxTitle}>
         <h6 className={css.title}>
           {car.brand} <span className={css.span}>{car.model}</span>, {car.year}
@@ -40,15 +37,15 @@ const CarItem = ({ onFavoriteToggle, isFavorite, car }) => {
       <p className={css.text}>
         {car.type} | {formatMileage(car.mileage)} km
       </p>
-      <div className={css.btnBox}>
-        <button
-          className={css.btn}
-          onClick={() => navigate(`/catalog/${car.id}`, { state: { car } })}
-        >
-          Read more
-        </button>
-      </div>
+      {/* <div className={css.btnBox}> */}
+      <button
+        className={css.btn}
+        onClick={() => navigate(`/catalog/${car.id}`, { state: { car } })}
+      >
+        Read more
+      </button>
     </div>
+    // </div>
   );
 };
 

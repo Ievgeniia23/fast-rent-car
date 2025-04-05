@@ -31,7 +31,18 @@ const CarList = ({ filters, page, setTotalPages }) => {
 
   return (
     <div>
-      <ul>
+      <ul className={css.list}>
+        {cars.map(car => (
+          <li key={car.id} className={css.item}>
+            <CarItem
+              car={car}
+              isFavorite={favorites.includes(car.id)}
+              onFavoriteToggle={() => dispatch(toggleFavorite(car.id))}
+            />
+          </li>
+        ))}
+      </ul>
+      {/* <ul>
         {cars.map(car => (
           <li key={car.id}>
             <h2>{car.name}</h2>
@@ -42,7 +53,7 @@ const CarList = ({ filters, page, setTotalPages }) => {
             </button>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
