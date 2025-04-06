@@ -42,13 +42,12 @@ const CarPage = () => {
     <div className={styles.carPage}>
       <div className={styles.imageWrapper}>
         <img className={styles.carImage} src={car.img} alt={car.brand} />
+
+        <BookForm />
       </div>
       <div className={styles.detailsWrapper}>
         <CarDetails car={car} />
-        <div className={styles.bookFormWrapper}>
-          <h3>Book Your Car Now</h3>
-          <BookForm />
-        </div>
+        <div className={styles.bookFormWrapper}></div>
       </div>
     </div>
   );

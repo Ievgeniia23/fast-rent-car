@@ -1,0 +1,39 @@
+.carPage {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 72px;
+  justify-content: center;
+  margin-top: 84px;
+  /* padding: 84px 120px; */
+  
+  /* margin: 0 auto; */
+  font-family: 'Inter', sans-serif;
+}
+
+
+.imageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 640px;
+  width: 100%;
+}
+
+.carImage {
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+
+.bookFormWrapper {
+  width: 100%;
+}
+
+
+.detailsWrapper {
+  flex: 1;
+  min-width: 320px;
+  max-width: 480px;
+}

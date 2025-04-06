@@ -41,7 +41,7 @@ const CarDetails = ({ car }) => {
       </div>
 
       <div className={css.container2}>
-        <h3 className={css.title2}>Car Specifications:</h3>
+        <h3 className={css.title}>Car Specifications:</h3>
 
         <div className={css.specBox}>
           <svg className={css.icon} width="16" height="16">
@@ -75,7 +75,7 @@ const CarDetails = ({ car }) => {
       <div className={css.container3}>
         <h3 className={css.title}>Accessories and functionalities:</h3>
 
-        <ul>
+        <ul className={css.accessories}>
           {car.accessories?.map((accessory, index) => (
             <li className={css.condition} key={index}>
               <svg className={css.icon} width="16" height="16">
@@ -86,7 +86,7 @@ const CarDetails = ({ car }) => {
           ))}
         </ul>
 
-        <ul>
+        <ul className={css.functionalities}>
           {car.functionalities?.map((functional, index) => (
             <li className={css.condition} key={index}>
               <svg className={css.icon} width="16" height="16">

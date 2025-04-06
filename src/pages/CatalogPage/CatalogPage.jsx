@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCars } from '../../redux/cars/operations';
 import {
@@ -19,12 +19,35 @@ const CatalogPage = () => {
   const error = useSelector(selectError);
   const filters = useSelector(selectFilters);
 
-  useEffect(() => {
-    dispatch(fetchCars(filters));
-  }, [filters, dispatch]);
+  const [page, setPage] = useState(1); 
+  const [isEnd, setIsEnd] = useState(false);
+  const limit = 8; 
 
-  if (isLoading) return <Loader />;
+ useEffect(() => {
+  
+   setPage(1);
+   setIsEnd(false);
+   dispatch(fetchCars({ page: 1, filters }));
+ }, [filters, dispatch]);
+
+  useEffect(() => {
+    if (page === 1) return; 
+    dispatch(fetchCars({ page, filters }))
+      .unwrap()
+      .then(result => {
+        
+        if (!result.cars.length) setIsEnd(true);
+      });
+  }, [page, dispatch, filters]);
+
+  const handleLoadMore = () => {
+    setPage(prev => prev + 1); 
+  };
+  
+  if (isLoading && page === 1) return <Loader />; 
   if (error) return <p>Error: {error}</p>;
+  
+ 
 
   return (
     <div className={css.container}>
@@ -36,6 +59,14 @@ const CatalogPage = () => {
           </li>
         ))}
       </ul>
+
+      {!isEnd && (
+        <div className={css.buttonWrapper}>
+          <button className={css.loadMoreButton} onClick={handleLoadMore}>
+            {isLoading ? <Loader /> : 'Load more'}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

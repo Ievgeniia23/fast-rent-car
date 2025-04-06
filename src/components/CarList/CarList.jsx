@@ -42,18 +42,7 @@ const CarList = ({ filters, page, setTotalPages }) => {
           </li>
         ))}
       </ul>
-      {/* <ul>
-        {cars.map(car => (
-          <li key={car.id}>
-            <h2>{car.name}</h2>
-            <button onClick={() => dispatch(toggleFavorite(car.id))}>
-              {favorites.includes(car.id)
-                ? 'Remove from favourites'
-                : 'Add to favourites'}
-            </button>
-          </li>
-        ))}
-      </ul> */}
+    
     </div>
   );
 };

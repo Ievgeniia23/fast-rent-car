@@ -1,8 +1,7 @@
 .homeWrapper {
-  background-image: url("../../assets/Background-desc@1x.webp");
+  background-image: url("../../assets/images/Background-desc@1x.webp");
   background-size: cover;  
   background-position: center;  
-  /* height: 700px;   */
   width: 100%; 
   position: relative;
   display: flex;
@@ -11,7 +10,14 @@
   align-items: center;
   color: #FFFFFF;
   margin: 0;
-  
+  }
+
+  h1 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 16px;
 }
 
 .textWrapper {
@@ -25,10 +31,14 @@
 
 }
 
-.homeWrapper h1 {
-  margin-bottom: 16px;
-}
 
-.homeWrapper p {
+
+ .textWrapper p {
+  font-family: var(--font-family);
+font-weight: 600;
+font-size: 24px;
+line-height: 1.3;
+text-align: center;
+color: var(--white);
   margin-bottom: 40px;
 }

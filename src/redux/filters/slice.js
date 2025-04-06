@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // Для збереження в локальному сховищі
+import storage from 'redux-persist/lib/storage'; 
 
-// Ініціалізація стану фільтрів
+
 const initialState = {
   brand: '',
   price: '',
@@ -10,7 +10,7 @@ const initialState = {
   maxMileage: '',
 };
 
-// Конфігурація для persist
+
 const filtersPersistConfig = {
   key: 'filters',
   storage,
@@ -21,9 +21,9 @@ const filtersSlice = createSlice({
   initialState,
   reducers: {
     setFilters: (state, action) => {
-      return { ...state, ...action.payload }; // Оновлює фільтри
+      return { ...state, ...action.payload }; 
     },
-    resetFilters: () => initialState, // Додаємо можливість скидання фільтрів
+    resetFilters: () => initialState, 
   },
 });
 

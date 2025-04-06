@@ -30,11 +30,17 @@ const carsSlice = createSlice({
       })
       .addCase(fetchCars.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.cars = action.payload.cars || action.payload; 
+       
+      const isFirstPage = action.meta.arg.page === 1; 
+      if (isFirstPage) {
+        state.cars = action.payload.cars || [];
+      } else {
+        state.cars = [...state.cars, ...(action.payload.cars || [])];
+      }
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload || 'Ошибка загрузки машин';
+        state.error = action.payload || 'Car loading error';
       })
       .addCase(fetchCarDetails.pending, state => {
         state.isLoading = true; 
@@ -47,7 +53,7 @@ const carsSlice = createSlice({
       })
       .addCase(fetchCarDetails.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload || 'Ошибка загрузки деталей машины';
+        state.error = action.payload || 'Car details loading error';
       });
   },
 });

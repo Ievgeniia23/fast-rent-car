@@ -37,7 +37,7 @@ const CarItem = ({ onFavoriteToggle, isFavorite, car }) => {
       <p className={css.text}>
         {car.type} | {formatMileage(car.mileage)} km
       </p>
-      {/* <div className={css.btnBox}> */}
+     
       <button
         className={css.btn}
         onClick={() => navigate(`/catalog/${car.id}`, { state: { car } })}

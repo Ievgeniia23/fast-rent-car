@@ -1,5 +1,13 @@
 .infoBox {
   padding: 20px;
+
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.3;
+color: var(--main);
+
+
 }
 
 .headTitle {
@@ -18,10 +26,10 @@
   margin-right: 8px;
 }
 
-.address,
+/* .address,
 .text {
   font-size: 14px;
-}
+} */
 
 .price {
   font-size: 20px;
@@ -29,25 +37,46 @@
   margin: 10px 0;
 }
 
+.container1 {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: column;
+}
+
 .container1,
-.container2,
-.container3 {
-  margin-top: 24px;
+.container2 {
+  margin-bottom: 104px;
 }
 
-.title,
-.title2 {
-  font-weight: 600;
-  margin-bottom: 8px;
+.title {
+font-family: var(--font-family);
+font-weight: 600;
+font-size: 20px;
+line-height: 1.2;
+color: var(--main);
+margin-bottom: 20px;
 }
 
-.conditionList,
-.condition {
+.conditionList {
   list-style: none;
   padding: 0;
-  margin: 4px 0;
+  margin: 0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.condition {
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.3;
+color: var(--main);
+display: flex;
+align-items: center;
+list-style: none;
+padding: 0;
+ 
 }
 
 .specBox {
@@ -55,3 +84,21 @@
   align-items: center;
   margin-bottom: 6px;
 }
+
+.container2,
+.accessories,
+.functionalities {
+font-family: var(--font-family);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.3;
+color: var(--main);
+display: flex;
+flex-direction: column;
+gap: 16px;
+
+}
+.accessories {
+  margin-bottom: 16px;
+}
+

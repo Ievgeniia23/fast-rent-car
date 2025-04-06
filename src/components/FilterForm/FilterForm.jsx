@@ -32,7 +32,7 @@ const FilterForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={css.formContainer}>
-      
+      <div className={css.fieldGroup}>
         <label className={css.label}>Car brand</label>
         <select
           value={filters.brand}
@@ -46,9 +46,9 @@ const FilterForm = () => {
             </option>
           ))}
         </select>
-     
+      </div>
 
-      
+      <div className={css.fieldGroup}>
         <label className={css.label}>Price / 1 hour</label>
         <select
           value={filters.price}
@@ -62,9 +62,9 @@ const FilterForm = () => {
             </option>
           ))}
         </select>
-     
+      </div>
 
-      
+      <div className={css.fieldMileageGroup}>
         <label className={css.label}>Car mileage / km</label>
         <div className={css.mileageContainer}>
           <input
@@ -74,7 +74,7 @@ const FilterForm = () => {
             onChange={e =>
               setLocalFilters({ ...filters, minMileage: e.target.value })
             }
-            className={css.input}
+            className={`${css.input} ${css.inputLeft}`}
           />
           <input
             type="number"
@@ -83,15 +83,14 @@ const FilterForm = () => {
             onChange={e =>
               setLocalFilters({ ...filters, maxMileage: e.target.value })
             }
-            className={css.input}
+            className={`${css.input} ${css.inputRight}`}
           />
         </div>
+      </div>
 
-        <button type="submit" className={css.searchButton}>
-          Search
-        </button>
-        
-      
+      <button type="submit" className={css.searchButton}>
+        Search
+      </button>
     </form>
   );
 };
