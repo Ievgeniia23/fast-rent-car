@@ -8,7 +8,7 @@ const Loader = () => {
 
   return (
     <div className={css.loaderStyle}>
-      <ClipLoader color="#4fa94d" loading={isLoading} size={50} />
+      <ClipLoader color="#0b44cd" loading={isLoading} size={50} />
     </div>
   );
 };

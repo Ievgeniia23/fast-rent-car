@@ -12,6 +12,7 @@ const BookForm = ({ carId }) => {
     e.preventDefault();
 
     toast.success('Booking request has been successfully sent!');
+   
 
     setName('');
     setEmail('');

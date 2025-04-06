@@ -34,7 +34,7 @@ const CarPage = () => {
   if (isLoading) return <Loader />;
 
   if (!car && !isLoading && !error) {
-    toast.error('Car not found');
+    // toast.error('Car not found');
     return <div>Car not found</div>;
   }
 
